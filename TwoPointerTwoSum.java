@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class TwoPointerSum {
-    // Return two values from distinct positions, or an empty array if none match.
-    public static int[] findPair(int[] numbers, int target) {
+public class TwoPointerTwoSum implements TwoSum {
+    // Return two values from distinct positions, or null if none match.
+    public int[] findPair(int[] numbers, int target) {
         int[] sorted = numbers.clone();
         Arrays.sort(sorted);
         int left = 0;
@@ -19,11 +19,11 @@ public class TwoPointerSum {
                 right--;
             }
         }
-        return new int[0];
+        return null;
     }
 
     public static void main(String[] args) {
         int[] numbers = {8, 1, 5, 3};
-        System.out.println(Arrays.toString(findPair(numbers, 8)));
+        System.out.println(Arrays.toString(new TwoPointerTwoSum().findPair(numbers, 8)));
     }
 }
